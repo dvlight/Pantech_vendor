@@ -28,7 +28,7 @@ ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
     B_FAMILY := msm8226 msm8610 msm8974
     B64_FAMILY := msm8992 msm8994
     BR_FAMILY := msm8909 msm8916
-    UM_FAMILY := msm8937 msm8953 msm8996
+    UM_FAMILY := msm8937 msm8953
 
     qcom_flags := -DQCOM_HARDWARE
     qcom_flags += -DQCOM_BSP
@@ -59,13 +59,13 @@ ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
         qcom_flags += -DHAS_EXTRA_FLAC_METADATA
     endif
 
-    # Enable color metadata for 8xx UM targets
-    ifneq ($(filter msm8996 msm8998,$(TARGET_BOARD_PLATFORM)),)
+    # Enable color metadata for modern UM targets
+    ifneq ($(filter msm8996 msm8998 sdm660,$(TARGET_BOARD_PLATFORM)),)
         TARGET_USES_COLOR_METADATA := true
     endif
 
     # List of targets that use master side content protection
-    MASTER_SIDE_CP_TARGET_LIST := msm8996 msm8998
+    MASTER_SIDE_CP_TARGET_LIST := msm8996 msm8998 sdm660
 
     TARGET_GLOBAL_CFLAGS += $(qcom_flags)
     TARGET_GLOBAL_CPPFLAGS += $(qcom_flags)
@@ -92,7 +92,7 @@ ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
     else
     ifeq ($(call is-board-platform-in-list, $(UM_FAMILY)),true)
         MSM_VIDC_TARGET_LIST := $(UM_FAMILY)
-        QCOM_HARDWARE_VARIANT := msm8996
+        QCOM_HARDWARE_VARIANT := msm8937
     else
         MSM_VIDC_TARGET_LIST := $(TARGET_BOARD_PLATFORM)
         QCOM_HARDWARE_VARIANT := $(TARGET_BOARD_PLATFORM)

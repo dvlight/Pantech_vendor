@@ -1,4 +1,4 @@
-# Copyright (C) 2011 The Android Open Source Project
+# Copyright (C) 2017 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,17 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH:=$(call my-dir)
-
-#ViaBrowser
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := ViaBrowser
-LOCAL_SRC_FILES := $(LOCAL_MODULE).apk
-LOCAL_MODULE_CLASS := APPS
-LOCAL_MODULE_TAGS := optional
-LOCAL_CERTIFICATE := PRESIGNED
-include $(BUILD_PREBUILT)
+LOCAL_PATH:= $(call my-dir)
 
 #AEXPapers
 
@@ -34,14 +24,24 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_CERTIFICATE := platform
 include $(BUILD_PREBUILT)
 
-#Retro Music Player
+#ViaBrowser
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := RetroMusicPlayer
+LOCAL_MODULE := ViaBrowser
 LOCAL_SRC_FILES := $(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
-LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_CERTIFICATE := platform
+include $(BUILD_PREBUILT)
+
+#Phonograph
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Phonograph
+LOCAL_SRC_FILES := $(LOCAL_MODULE).apk
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_TAGS := optional
+LOCAL_CERTIFICATE := platform
 include $(BUILD_PREBUILT)
 
 #Pixel WallpaperPicker
@@ -50,7 +50,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := WallpaperPickerGoogle
 LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := $(LOCAL_MODULE).apk
-LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
 include $(BUILD_PREBUILT)
