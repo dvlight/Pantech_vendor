@@ -1,4 +1,4 @@
-# Copyright (C) 2017 AospExtended ROM
+# Copyright (C) 2017 AospExtended
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,20 +14,20 @@
 
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
-    ro.com.google.clientidbase=android-google \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
     ro.com.android.wifi-watchlist=GoogleGuest \
     ro.setupwizard.enterprise_mode=1 \
     ro.com.android.dateformat=MM-dd-yyyy \
     ro.com.android.dataroaming=false \
+    ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent \
     ro.setupwizard.rotation_locked=true \
-    ro.build.selinux=0 \
+    ro.opa.eligible_device=true\
     persist.sys.dun.override=0 \
     media.sf.omx-plugin=libffmpeg_omx.so \
     media.sf.extractor-plugin=libffmpeg_extractor.so \
+    ro.storage_manager.enabled=true \
     ro.substratum.verified=true \
-    ro.opa.eligible_device=true \
     persist.sys.recovery_update=false \
     ro.com.google.ime.theme_id=5
 
@@ -44,10 +44,6 @@ else
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.device.cache_dir=/cache
 endif
-
-# Recommend using the non debug dexpreopter
-USE_DEX2OAT_DEBUG ?= false
-
 
 # MusicFX advanced effects
 ifneq ($(TARGET_NO_DSPMANAGER), true)
