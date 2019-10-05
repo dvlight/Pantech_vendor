@@ -1,1 +1,4 @@
-allow adbd adbtcp_prop:property_service set;
+set_prop(adbd, adbsecure_prop)
+
+# Required in order to set cm.service.adb.root
+set_prop(adbd, system_prop)

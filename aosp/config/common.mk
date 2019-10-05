@@ -59,25 +59,6 @@ PRODUCT_COPY_FILES += \
 endif
 endif
 
-# Custom AOSP packages
-PRODUCT_PACKAGES += \
-    BluetoothExt \
-    LatinIME \
-    MusicFX \
-    Launcher3 \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    Stk \
-    ThemeInterfacer \
-    WallpaperPickerGoogle \
-    ViaBrowser \
-    CalendarWidget \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    Phonograph \
-    SoundRecorder \
-    Turbo
-
 # Extra tools
 PRODUCT_PACKAGES += \
     e2fsck \

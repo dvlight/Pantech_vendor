@@ -5,13 +5,3 @@ PRODUCT_COPY_FILES += \
 # World APN list
 PRODUCT_COPY_FILES += \
     vendor/aosp/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
-
-# Telephony packages
-PRODUCT_PACKAGES += \
-    messaging \
-    Stk \
-    CellBroadcastReceiver \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
